@@ -97,7 +97,7 @@ function stemString(string) {
                 case 'd':
                     if (test.length <= 3) {
                         
-                    else if (test.charAt(test.length - 2) === 'y') {
+                    } else if (test.charAt(test.length - 2) === 'y') {
                         if (test.charAt(test.length - 3) === 'e') {
                             string[i] = test.slice(0, -2);
                             console.log(string[i]);
