@@ -3,7 +3,7 @@ function setOutput(string) {
 }
 
 function removeAccents(string) {
-    string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    string = string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     setOutput(string);
 }
 
