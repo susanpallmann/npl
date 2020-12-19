@@ -1,5 +1,5 @@
 $(document)ready(function () {
-    const contractions = [
+    let contractions = [
         ["can't", "can not"],
         ["won't", "will not"],
         ["wouldn't", "would not"],
