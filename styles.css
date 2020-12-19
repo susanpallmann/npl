@@ -3,3 +3,21 @@ body {
   padding: 0;
   font-family: "IBM Plex Sans", sans-serif;
 }
+
+#input {
+  font-size: 2em;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-top: 1em;
+  border-bottom: 3px solid #4f8bfe;
+  color: #4f8bfe;
+  font-weight: 500;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+#output {
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: 1.5em;
+}
