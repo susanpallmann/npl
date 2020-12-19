@@ -108,6 +108,14 @@ function stemString(string) {
                                 string[i] = test.slice(0, -3);
                                 string[i] = string[i] + 'y';
                             }
+                        } else if (test.charAt(test.length - 3) === 'y') {
+                            string[i] = test.slice(0, -1);
+                        } else if (test.charAt(test.length - 3) === test.charAt(test.length - 4)) {   
+                            if (test.charAt(test.length - 3) === 's') {
+                                string[i] = test.slice(0, -2);
+                            } else {
+                                string[i] = test.slice(0, -3);
+                            }
                         }
                     } 
                 break;
