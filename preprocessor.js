@@ -67,15 +67,12 @@ function stemString(string) {
         test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
 
         for (j = 0; j < test.length; j++) {
-            console.log(test);
-            console.log(test.length);
             let lastLetter = test.charAt(test.length - 1);
             switch (lastLetter) {
                 case 's':
                     if (test.charAt(test.length - 2) === 'y') {
                         if (test.charAt(test.length - 3) === 'e') {
                             string[i] = test.slice(0, -1);
-                            console.log(string[i]);
                         }
                     } else if (test.charAt(test.length - 2) === 'e') {
                         if (test.charAt(test.length - 3) === 'i') {
@@ -100,7 +97,6 @@ function stemString(string) {
                     } else if (test.charAt(test.length - 2) === 'y') {
                         if (test.charAt(test.length - 3) === 'e') {
                             string[i] = test.slice(0, -2);
-                            console.log(string[i]);
                         }
                     } else if (test.charAt(test.length - 2) === 'e') {
                         if (test.charAt(test.length - 3) === 'i') {
