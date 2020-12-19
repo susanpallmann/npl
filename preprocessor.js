@@ -126,7 +126,11 @@ function stemString(string) {
                                     string[i] = test.slice(0, -2);
                                 } else {
                                     if (consonants.includes(test.charAt(test.length - 6))) {
-                                        string[i] = test.slice(0, -2);
+                                        if (test.length - 6 > 0) {
+                                            string[i] = test.slice(0, -2);
+                                        } else {
+                                            string[i] = test.slice(0, -1);
+                                        }
                                     } else {
                                         string[i] = test.slice(0, -1);
                                     }
