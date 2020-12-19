@@ -10,6 +10,7 @@ $(document).ready(function () {
     console.log("This ran.");
     
     $('#input').on('input', function() {
+        console.log("This ran.");
         setOutput($('#input').text());
     });
 });
