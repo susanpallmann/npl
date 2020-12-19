@@ -121,6 +121,10 @@ function stemString(string) {
                                 } else {
                                     string[i] = test.slice(0, -1);
                                 }
+                            } else {
+                                if (vowels.includes(test.charAt(test.length - 5))) {
+                                    string[i] = test.slice(0, -2);
+                                }
                             }
                         }
                     } 
