@@ -77,7 +77,15 @@ function stemString(string) {
                             string[i] = test.slice(0, -1);
                             console.log(string[i]);
                         }
-                    } else if (test.charAt(test.length - 1) === 'e') {
+                    } else if (test.charAt(test.length - 2) === 'e') {
+                        if (test.charAt(test.length - 3) === 'i') {
+                            string[i] = test.slice(0, -3);
+                            string[i] = string[i] + 'y';
+                        }
+                    } else if (vowels.includes(test.charAt(test.length - 2))) {
+                        string[i] = test.slice(0, -1);
+                    } else if (consonants.includes(test.charAt(test.length - 2))) {
+                        string[i] = test.slice(0, -1);
                     }
                 break;
                 case 'd':
