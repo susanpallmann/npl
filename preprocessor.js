@@ -122,10 +122,6 @@ function stemString(string) {
                                     } else {
                                         string[i] = test.slice(0, -2);
                                     }
-                                } else if (consonants.includes(test.charAt(test.length - 5))) {
-                                    if ((test.length - 5) > 2) {
-                                        string[i] = test.slice(0, -2);
-                                    }
                                 } else if (vowels.includes(test.charAt(test.length - 5))) {
                                     string[i] = test.slice(0, -2);
                                 } else {
@@ -133,7 +129,9 @@ function stemString(string) {
                                 }
                             } else {
                                 if (consonants.includes(test.charAt(test.length - 5))) {
-                                    string[i] = test.slice(0, -2);
+                                    if ((test.length - 5) > 2) {
+                                        string[i] = test.slice(0, -2);
+                                    }
                                 } else if (vowels.includes(test.charAt(test.length - 5))) {
                                     string[i] = test.slice(0, -2);
                                 }
