@@ -16,13 +16,13 @@ function changeContractions(string) {
                 let trailing = [];
                 for (var k = 0; k < string[i].length; k++) {
                     console.log(string[i].charAt(k));
-                    console.log(/[^\w\s]/gi, ''.test(string[i].charAt(k)));
-                    if (/[^\w\s]/gi, ''.test(string[i].charAt(k))) {
+                    console.log(/[^\w\s]/gi.test(string[i].charAt(k)));
+                    if (/[^\w\s]/gi.test(string[i].charAt(k))) {
                         if (state === 0) {
                             state = 1;
                             beginning.push(string[i].charAt(k));
                             console.log(beginning);
-                        } else if (/'\B|[^a-z'? ]/g, ``.test(string[i].charAt(k))) {
+                        } else if (/'\B|[^a-z'? ]/g.test(string[i].charAt(k))) {
                         } else {
                             state = 3;
                             trailing.push(string[i].charAt(k));
