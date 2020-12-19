@@ -15,6 +15,8 @@ function changeContractions(string) {
                 let beginning = [];
                 let trailing = [];
                 for (var k = 0; k < string[i].length; k++) {
+                    console.log(string[i].charAt(k));
+                    console.log(string[i].charAt(k) === (/[^\w\s]/gi, ''));
                     if (string[i].charAt(k) === (/[^\w\s]/gi, '')) {
                         if (state === 0) {
                             state = 1;
