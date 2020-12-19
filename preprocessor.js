@@ -7,3 +7,6 @@ $('#input').on('keyup change paste', 'input, select, textarea', function(){
     setOutput($('#input').text());
 });
 // Magic comment
+$(document).ready(function () {
+    console.log("This ran.");
+});
