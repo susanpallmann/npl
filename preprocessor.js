@@ -1,6 +1,10 @@
+function setOutput(output) {
+    $('#output').text(output);
+}
+
 $(document).ready(function() {
     $('#input').change(function() {
-        $('#output').text($('#input').text());
+        setOutput($('#input').text());
     });
 });
 
