@@ -88,7 +88,10 @@ function stemString(string) {
                     } else if (vowels.includes(test.charAt(test.length - 2))) {
                         string[i] = test.slice(0, -1);
                     } else if (consonants.includes(test.charAt(test.length - 2))) {
-                        string[i] = test.slice(0, -1);
+                        if (test.charAt(test.length - 2) === 's') {
+                        } else {
+                            string[i] = test.slice(0, -1);
+                        }
                     }
                 break;
                 case 'd':
