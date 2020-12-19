@@ -1,14 +1,13 @@
 $(document).ready(function () {
+});
+
+function setOutput(output) {
+    $('#output').text(output);
+}
+
+$('#input').on('input', function() {
     console.log("This ran.");
-    
-    function setOutput(output) {
-        $('#output').text(output);
-    }
-    
-    $('#input').on('input', function() {
-        console.log("This ran.");
-        setOutput($('#input').val());
-    });
+    setOutput($('#input').val());
 });
 
 // Magic comment
