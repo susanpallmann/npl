@@ -6,7 +6,8 @@ function changeContractions(string) {
     string = string.split(' ');
     for (i = 0; i < string.length; i++) {
         for (j = 0; j < contractions.length; j++) {
-            let test = string[i].toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
+            let test = string[i];
+            test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
             console.log(test);
             console.log(string[i]);
             if (contractions[j][0] === test) {
