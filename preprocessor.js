@@ -70,59 +70,59 @@ function stemString(string) {
             console.log(test);
             console.log(test.length);
             let lastLetter = test.charAt(test.length - 1);
-            if (test.length !<= 3) {
-                switch (lastLetter) {
-                    case 's':
-                        if (test.charAt(test.length - 2) === 'y') {
-                            if (test.charAt(test.length - 3) === 'e') {
-                                string[i] = test.slice(0, -1);
-                                console.log(string[i]);
-                            }
-                        } else if (test.charAt(test.length - 2) === 'e') {
-                            if (test.charAt(test.length - 3) === 'i') {
-                                if (test.length - 4 === 0) {
-                                    string[i] = test.slice(0, -1);
-                                } else {
-                                    string[i] = test.slice(0, -3);
-                                    string[i] = string[i] + 'y';
-                                }
-                            } else {
-                                string[i] = test.slice(0, -1);
-                            }
-                        } else if (vowels.includes(test.charAt(test.length - 2))) {
+            switch (lastLetter) {
+                case 's':
+                    if (test.charAt(test.length - 2) === 'y') {
+                        if (test.charAt(test.length - 3) === 'e') {
                             string[i] = test.slice(0, -1);
-                        } else if (consonants.includes(test.charAt(test.length - 2))) {
+                            console.log(string[i]);
+                        }
+                    } else if (test.charAt(test.length - 2) === 'e') {
+                        if (test.charAt(test.length - 3) === 'i') {
+                            if (test.length - 4 === 0) {
+                                string[i] = test.slice(0, -1);
+                            } else {
+                                string[i] = test.slice(0, -3);
+                                string[i] = string[i] + 'y';
+                            }
+                        } else {
                             string[i] = test.slice(0, -1);
                         }
-                    break;
-                    case 'd':
-                        if (test.charAt(test.length - 2) === 'y') {
-                            if (test.charAt(test.length - 3) === 'e') {
-                                string[i] = test.slice(0, -2);
-                                console.log(string[i]);
-                            }
-                        } else if (test.charAt(test.length - 2) === 'e') {
-                            if (test.charAt(test.length - 3) === 'i') {
-                                if (test.length - 4 === 0) {
-                                    string[i] = test.slice(0, -1);
-                                } else {
-                                    string[i] = test.slice(0, -3);
-                                    string[i] = string[i] + 'y';
-                                }
-                            } else if (test.charAt(test.length - 3) === 'y') {
+                    } else if (vowels.includes(test.charAt(test.length - 2))) {
+                        string[i] = test.slice(0, -1);
+                    } else if (consonants.includes(test.charAt(test.length - 2))) {
+                        string[i] = test.slice(0, -1);
+                    }
+                break;
+                case 'd':
+                    if (test.length <= 3) {
+                        
+                    else if (test.charAt(test.length - 2) === 'y') {
+                        if (test.charAt(test.length - 3) === 'e') {
+                            string[i] = test.slice(0, -2);
+                            console.log(string[i]);
+                        }
+                    } else if (test.charAt(test.length - 2) === 'e') {
+                        if (test.charAt(test.length - 3) === 'i') {
+                            if (test.length - 4 === 0) {
                                 string[i] = test.slice(0, -1);
-                            } else if (test.charAt(test.length - 3) === test.charAt(test.length - 4)) {   
-                                if (test.charAt(test.length - 3) === 's') {
-                                    string[i] = test.slice(0, -2);
-                                } else {
-                                    string[i] = test.slice(0, -3);
-                                }
+                            } else {
+                                string[i] = test.slice(0, -3);
+                                string[i] = string[i] + 'y';
                             }
-                        } 
-                    break;
-                    default:
-                    break;
-                }
+                        } else if (test.charAt(test.length - 3) === 'y') {
+                            string[i] = test.slice(0, -1);
+                        } else if (test.charAt(test.length - 3) === test.charAt(test.length - 4)) {   
+                            if (test.charAt(test.length - 3) === 's') {
+                                string[i] = test.slice(0, -2);
+                            } else {
+                                string[i] = test.slice(0, -3);
+                            }
+                        }
+                    } 
+                break;
+                default:
+                break;
             }
         }
     }
