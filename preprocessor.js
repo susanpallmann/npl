@@ -1,8 +1,7 @@
 $(document).ready(function() {
-});
-
-$('#input').change(function() {
-  $('#output').text($('#input').text());
+    $('#input').change(function() {
+        $('#output').text($('#input').text());
+    });
 });
 
 // Magic comment
