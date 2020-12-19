@@ -7,6 +7,8 @@ function changeContractions(string) {
     for (i = 0; i < string.length; i++) {
         for (j = 0; j < contractions.length; j++) {
             let test = string[i].toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
+            console.log(test);
+            console.log(string[i]);
             if (contractions[j][0] === test) {
                 let state = 0;
                 let beginning = [];
@@ -16,10 +18,12 @@ function changeContractions(string) {
                         if (state === 0) {
                             state = 1;
                             beginning.push(string[i].charAt(k));
+                            console.log(beginning);
                         } else if (string[i].charAt(k) === (/'\B|[^a-z'? ]/g, ``)) {
                         } else {
                             state = 3;
                             trailing.push(string[i].charAt(k));
+                            console.log(trailing);
                         }
                     }
                 }
