@@ -24,6 +24,7 @@ function changeContractions(string) {
                             beginning.push(string[i].charAt(k));
                             console.log(beginning);
                         } else if (/^[a-zA-Z]+$/.test(string[i].charAt(k - 1)) && /^[a-zA-Z]+$/.test(string[i].charAt(k + 1))) {
+                            state = 2;
                         } else if (state === 1) {
                             beginning.push(string[i].charAt(k));
                         } else {
@@ -31,6 +32,8 @@ function changeContractions(string) {
                             trailing.push(string[i].charAt(k));
                             console.log(trailing);
                         }
+                    } else {
+                        state = 2;
                     }
                 }
                 string[i] = beginning.join('') + contractions[j][1] + trailing.join('');
