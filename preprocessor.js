@@ -8,7 +8,22 @@ function changeContractions(string) {
         for (j = 0; j < contractions.length; j++) {
             let test = string[i].toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
             if (contractions[j][0] === test) {
-                string[i] = contractions[j][1];
+                let state = 0;
+                let beginning = [];
+                let trailing = [];
+                for (var k = 0; k < string[i].length; k++) {
+                    if (string[i].charAt(k) === (/[^\w\s]/gi, '')) {
+                        if (state === 0) {
+                            state = 1;
+                            beginning.push(string[i].charAt(k));
+                        } else if (string[i].charAt(k) === (/'\B|[^a-z'? ]/g, ``)) {
+                        } else {
+                            state = 3;
+                            trailing.push(string[i].charAt(k));
+                        }
+                    }
+                }
+                string[i] = beginning.join('') + contractions[j][1] + trailing.join('');
             }
         }
     }
