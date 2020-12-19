@@ -108,8 +108,6 @@ function stemString(string) {
                                 string[i] = test.slice(0, -3);
                                 string[i] = string[i] + 'y';
                             }
-                        } else {
-                            string[i] = test.slice(0, -1);
                         }
                     } 
                 break;
