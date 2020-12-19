@@ -3,28 +3,64 @@ function setOutput(string) {
     $('#output').text(string);
 }
 
-function lemmatizeString(string) {
-    
-    // List of stems - consider moving to its own file if this gets too long
-    
-    /*
-    
-    let stems = [
-        'ant',
-        'ing',
-        'ative',
-        'ants',
-        'ed',
-        's',
-        '',
-        'ate',
-        'ation'
-        'ence'
-        'ance',
-        'd'
+function removeStops(string) {
+    let stopwords = [
+        'a',
+        'an',
+        'the'
     ];
     
-    */
+    string = string.split(' ');
+    for (i = 0; i < string.length; i++) {
+        let test = string[i];
+        test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
+        if (stopwords.includes(test)) {
+            string[i] = '';
+        }
+    }
+    string = string.join(' ');
+    setOutput(string);
+}
+
+function stemString(string) {
+    
+    // List of letter categorizations (TODO: move this elsewhere, I'm sure we'll use it in other functions)
+    let consonants = [
+        'b', 
+        'c',
+        'd',
+        'f',
+        'g',
+        'h',
+        'j',
+        'k',
+        'l',
+        'm',
+        'n',
+        'p',
+        'q',
+        'r',
+        's',
+        't',
+        'v',
+        'w',
+        'x',
+        'z'
+    ];
+    
+    let vowels = [
+        'a',
+        'e',
+        'i',
+        'o',
+        'u'
+    ]
+    
+    let sometimes = [
+        'y'
+    ];
+    
+    removeStops(string);
 }
 
 // Changes contractions to their long form, and ensures that preceding/following punctuation is maintained
@@ -96,11 +132,14 @@ function changeContractions(string) {
     
     // puts the sentence back together, words separated by spaces again
     string = string.join(' ');
-    setOutput(string);
+    stemString(string);
 }
 
 // replaces accented characters with their equivalent plain letter
 function removeAccents(string) {
+    
+    // converts to lowercase, as that should be all we really need right now
+    string = string.toLowerCase();
     string = string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     
     // passes over to changeContractions for further processing
@@ -118,6 +157,7 @@ $(document).ready(function () {
 // processing steps:
 //   1. remove accented characters (removeAccents)
 //   2. expand contractions to long form (changeContractions)
-//   3. lemmatizing words to their simple form (lemmatizeString)
+//   3. stemming words to a simple, but inaccurate form (stemString)
+//   4. removing stopwords, like "the" or "and" (removeStops)
 
 // Magic comment
