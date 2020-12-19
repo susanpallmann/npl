@@ -243,4 +243,4 @@ $(document).ready(function () {
 //   3. stemming words to a simple, but inaccurate form (stemString)
 //   4. removing stopwords, like "the" or "and" (removeStops)
 
-// Magic comment
+// Magic comment |
