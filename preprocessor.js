@@ -79,8 +79,12 @@ function stemString(string) {
                         }
                     } else if (test.charAt(test.length - 2) === 'e') {
                         if (test.charAt(test.length - 3) === 'i') {
-                            string[i] = test.slice(0, -3);
-                            string[i] = string[i] + 'y';
+                            if (test.length - 4 === 0) {
+                                string[i] = test.slice(0, -1);
+                            } else {
+                                string[i] = test.slice(0, -3);
+                                string[i] = string[i] + 'y';
+                            }
                         } else {
                             string[i] = test.slice(0, -1);
                         }
@@ -98,8 +102,12 @@ function stemString(string) {
                         }
                     } else if (test.charAt(test.length - 2) === 'e') {
                         if (test.charAt(test.length - 3) === 'i') {
-                            string[i] = test.slice(0, -3);
-                            string[i] = string[i] + 'y';
+                            if (test.length - 4 === 0) {
+                                string[i] = test.slice(0, -1);
+                            } else {
+                                string[i] = test.slice(0, -3);
+                                string[i] = string[i] + 'y';
+                            }
                         } else {
                             string[i] = test.slice(0, -1);
                         }
