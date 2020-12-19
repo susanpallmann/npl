@@ -7,7 +7,7 @@ $(document).ready(function () {
     
     $('#input').on('input', function() {
         console.log("This ran.");
-        setOutput($('#input').text());
+        setOutput($('#input').val());
     });
 });
 
