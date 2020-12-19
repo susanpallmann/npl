@@ -61,25 +61,28 @@ function stemString(string) {
     ];
     
     string = string.split(' ');
-    let test = string[i];
-    test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
     
-    for (i = 0; i < test.length; i++) {
-        let lastLetter = test.charAt(test.length);
-        switch (lastLetter) {
-            case 's':
-                if (test.charAt(test.length - 1) === 'y') {
-                    if (test.charAt(test.length - 2) === 'e') {
-                        string[i] = test.slice(0, -1);
-                        console.log(string[i]);
+    for (i = 0; i < string.length; i++) {
+        let test = string[i];
+        test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
+
+        for (j = 0; j < test.length; j++) {
+            let lastLetter = test.charAt(test.length);
+            switch (lastLetter) {
+                case 's':
+                    if (test.charAt(test.length - 1) === 'y') {
+                        if (test.charAt(test.length - 2) === 'e') {
+                            string[i] = test.slice(0, -1);
+                            console.log(string[i]);
+                        }
+                    } else if (test.charAt(test.length - 1) === 'e') {
                     }
-                } else if (test.charAt(test.length - 1) === 'e') {
-                }
-            break;
-            case 'd':
-            break;
-            default:
-            break;
+                break;
+                case 'd':
+                break;
+                default:
+                break;
+            }
         }
     }
     string = string.join(' ');
