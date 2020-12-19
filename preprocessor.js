@@ -19,11 +19,13 @@ function changeContractions(string) {
                     console.log(string[i].charAt(k));
                     console.log(/[^\w\s]/gi.test(string[i].charAt(k)));
                     if (/[^\w\s]/gi.test(string[i].charAt(k))) {
-                        if (state === 0) {
+                        if (k === 0) {
                             state = 1;
                             beginning.push(string[i].charAt(k));
                             console.log(beginning);
                         } else if (/^[a-zA-Z]+$/.test(string[i].charAt(k - 1)) && /^[a-zA-Z]+$/.test(string[i].charAt(k + 1))) {
+                        } else if (state === 1) {
+                            beginning.push(string[i].charAt(k));
                         } else {
                             state = 3;
                             trailing.push(string[i].charAt(k));
