@@ -81,6 +81,8 @@ function stemString(string) {
                         if (test.charAt(test.length - 3) === 'i') {
                             string[i] = test.slice(0, -3);
                             string[i] = string[i] + 'y';
+                        } else {
+                            string[i] = test.slice(0, -1);
                         }
                     } else if (vowels.includes(test.charAt(test.length - 2))) {
                         string[i] = test.slice(0, -1);
