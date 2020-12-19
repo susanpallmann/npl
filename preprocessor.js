@@ -67,6 +67,8 @@ function stemString(string) {
         test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
 
         for (j = 0; j < test.length; j++) {
+            console.log(test);
+            console.log(test.length);
             let lastLetter = test.charAt(test.length);
             switch (lastLetter) {
                 case 's':
