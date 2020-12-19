@@ -1,58 +1,123 @@
+// updates the #output DOM element with a given string
 function setOutput(string) {
     $('#output').text(string);
 }
 
+function lemmatizeString(string) {
+    
+    // List of stems - consider moving to its own file if this gets too long
+    
+    /*
+    
+    let stems = [
+        'ant',
+        'ing',
+        'ative',
+        'ants',
+        'ed',
+        's',
+        '',
+        'ate',
+        'ation'
+        'ence'
+        'ance',
+        'd'
+    ];
+    
+    */
+}
+
+// Changes contractions to their long form, and ensures that preceding/following punctuation is maintained
 function changeContractions(string) {
+    
+    // Divides into words by splitting on spaces
     string = string.split(' ');
+    
+    // for each word in the input
     for (i = 0; i < string.length; i++) {
+        
+        // iterate through programmed contractions
         for (j = 0; j < contractions.length; j++) {
+            
+            // normalizes word to ensure it matches the expected format
             let test = string[i];
             string[i].toLowerCase();
             test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
-            console.log(test);
-            console.log(string[i]);
+            
+            // if a match is found in programmed contractions
             if (contractions[j][0] === test) {
+                
+                // following block checks for symbols and, based on its location in the word, either removes or maintains it
+                // sets starting state
                 let state = 0;
+                
+                // initializing array for symbols at the beginning of the word
                 let beginning = [];
+                
+                // initializing array for symbols at the end of the word
                 let trailing = [];
+                
+                // for each character in the word
                 for (var k = 0; k < string[i].length; k++) {
-                    console.log(string[i].charAt(k));
-                    console.log(/[^\w\s]/gi.test(string[i].charAt(k)));
+                    
+                    // if the character is a symbol
                     if (/[^\w\s]/gi.test(string[i].charAt(k))) {
+                        
+                        // if this is the first letter of the alphabet, advance to stage 1 (beginning symbols), adds to beginning array
                         if (k === 0) {
                             state = 1;
                             beginning.push(string[i].charAt(k));
-                            console.log(beginning);
-                        } else if (/^[a-zA-Z]+$/.test(string[i].charAt(k - 1)) && /^[a-zA-Z]+$/.test(string[i].charAt(k + 1))) {
-                            state = 2;
+                        
+                        // if we're in state 1, keep adding to the beginning array, stay in stage 1
                         } else if (state === 1) {
                             beginning.push(string[i].charAt(k));
+                            
+                        // if it wasn't the first letter, check if it's surrounded by alphabet characters, advance to stage 2 (mid-word), doesn't record symbol
+                        } else if (/^[a-zA-Z]+$/.test(string[i].charAt(k - 1)) && /^[a-zA-Z]+$/.test(string[i].charAt(k + 1))) {
+                            state = 2;
+                        
+                        // if it's none of the previous, assume it's at the end, advance to state 3 (trailing symbols), adds to trailing array
                         } else {
                             state = 3;
                             trailing.push(string[i].charAt(k));
-                            console.log(trailing);
                         }
+                        
+                    // if the character is not a symbol, we assume we're in state 2 (mid-word)
                     } else {
                         state = 2;
                     }
                 }
+                
+                // joins beginning and trailing symbols with the matching expanded contraction from our programmed contractions
                 string[i] = beginning.join('') + contractions[j][1] + trailing.join('');
             }
         }
     }
+    
+    // puts the sentence back together, words separated by spaces again
     string = string.join(' ');
     setOutput(string);
 }
 
+// replaces accented characters with their equivalent plain letter
 function removeAccents(string) {
     string = string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    
+    // passes over to changeContractions for further processing
     changeContractions(string);
 }
 
 $(document).ready(function () {
     $('#input').on('input', function() {
+        
+        // begins by sending string pulled from #input DOM element to remove accents
         removeAccents($('#input').val());
     });
 });
+
+// processing steps:
+//   1. remove accented characters (removeAccents)
+//   2. expand contractions to long form (changeContractions)
+//   3. lemmatizing words to their simple form (lemmatizeString)
 
 // Magic comment
