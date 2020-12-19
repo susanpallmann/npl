@@ -8,6 +8,10 @@ $('#input').on('input', function() {
 
 $(document).ready(function () {
     console.log("This ran.");
+    
+    $('#input').on('input', function() {
+        setOutput($('#input').text());
+    });
 });
 
 // Magic comment
