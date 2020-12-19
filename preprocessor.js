@@ -117,7 +117,11 @@ function stemString(string) {
                         } else if (consonants.includes(test.charAt(test.length - 3))) {
                             if (vowels.includes(test.charAt(test.length - 4))) {
                                 if (test.charAt(test.length - 5) === 'h') {
-                                    string[i] = test.slice(0, -2);
+                                    if ((test.length - 5) < 2) {
+                                        string[i] = test.slice(0, -1);
+                                    } else {
+                                        string[i] = test.slice(0, -2);
+                                    }
                                 } else if (vowels.includes(test.charAt(test.length - 5))) {
                                     string[i] = test.slice(0, -2);
                                 } else {
