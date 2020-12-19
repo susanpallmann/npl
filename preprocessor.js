@@ -69,11 +69,11 @@ function stemString(string) {
         for (j = 0; j < test.length; j++) {
             console.log(test);
             console.log(test.length);
-            let lastLetter = test.charAt(test.length);
+            let lastLetter = test.charAt(test.length - 1);
             switch (lastLetter) {
                 case 's':
-                    if (test.charAt(test.length - 1) === 'y') {
-                        if (test.charAt(test.length - 2) === 'e') {
+                    if (test.charAt(test.length - 2) === 'y') {
+                        if (test.charAt(test.length - 3) === 'e') {
                             string[i] = test.slice(0, -1);
                             console.log(string[i]);
                         }
