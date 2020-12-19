@@ -3,7 +3,8 @@ function setOutput(output) {
 }
 
 $(document).ready(function() {
-    $('#input').change(function() {
+    $('#input').on('keyup change paste', 'input, select, textarea', function(){
+        console.log("This ran.");
         setOutput($('#input').text());
     });
 });
