@@ -295,7 +295,7 @@ function stemString(string) {
         }
         
         if (test.charAt(test.length - 1) === 's') {
-            test = test.slice(0, -3);
+            test = test.slice(0, -1);
             evaluateWordPattern(test);
             
         } else if (test.charAt(test.length - 1) === 'd') {
@@ -303,7 +303,7 @@ function stemString(string) {
             evaluateWordPattern(test);
             
         } else if (test.charAt(test.length - 1) === 'g' && (test.charAt(test.length - 2) === 'n') && (test.charAt(test.length - 3) === 'i')) {
-            test = test.slice(0, -1);
+            test = test.slice(0, -3);
             evaluateWordPattern(test);
             
         }    
