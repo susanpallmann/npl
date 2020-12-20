@@ -64,130 +64,142 @@ function stemString(string) {
         'y'
     ];
     
+    let sExceptions = [
+        "his",
+        "this",
+        "is",
+        "was",
+        "lens",
+        "means",
+        "species",
+        "glasses",
+        "cactus",
+        "octopus",
+        "bias",
+        "alias",
+        "iris",
+        "its",
+        "it's",
+        "bus",
+        "yes",
+        "gas",
+        "athletics",
+        "acoustics",
+        "linguistics",
+        "billiards",
+        "logistics",
+        "diabetes",
+        "news",
+        "hypothesis",
+        "virus",
+        "mucus",
+        "coronavirus"
+    ];
+    
+    let dExceptions = [
+        "feed",
+        "seed",
+        "creed",
+        "need",
+        "bleed"
+    ];
+    
     string = string.split(' ');
     
     for (i = 0; i < string.length; i++) {
         let test = string[i];
         test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
-
-        for (j = 0; j < test.length; j++) {
-            let lastLetter = test.charAt(test.length - 1);
-            let sExceptions = [
-                "his",
-                "this",
-                "is",
-                "was",
-                "lens",
-                "means",
-                "species",
-                "glasses",
-                "cactus",
-                "octopus",
-                "bias",
-                "alias",
-                "iris",
-                "its",
-                "it's",
-                "bus",
-                "yes",
-                "gas",
-                "athletics",
-                "acoustics",
-                "linguistics",
-                "billiards",
-                "logistics",
-                "diabetes",
-                "news",
-                "hypothesis",
-                "virus",
-                "mucus",
-                "coronavirus"
-            ];
-            switch (lastLetter) {
-                case 's':
-                    if (sExceptions.includes(test)) {
-                    } else if (test.charAt(test.length - 2) === 'y') {
-                        if (test.charAt(test.length - 3) === 'e') {
-                            string[i] = test.slice(0, -1);
-                        }
-                    } else if (test.charAt(test.length - 2) === 'e') {
-                        if (test.charAt(test.length - 3) === 'i') {
-                            if (test.length - 4 === 0) {
+        if (dExceptions.contains(test) {
+        } else {
+            for (j = 0; j < test.length; j++) {
+                let lastLetter = test.charAt(test.length - 1);
+                switch (lastLetter) {
+                    case 's':
+                        if (sExceptions.includes(test)) {
+                        } else if (test.charAt(test.length - 2) === 'y') {
+                            if (test.charAt(test.length - 3) === 'e') {
                                 string[i] = test.slice(0, -1);
-                            } else {
-                                string[i] = test.slice(0, -3);
-                                string[i] = string[i] + 'y';
                             }
-                        } else {
-                            string[i] = test.slice(0, -1);
-                        }
-                    } else if (vowels.includes(test.charAt(test.length - 2))) {
-                        string[i] = test.slice(0, -1);
-                    } else if (consonants.includes(test.charAt(test.length - 2))) {
-                        if (test.charAt(test.length - 2) === 's') {
-                        } else {
-                            string[i] = test.slice(0, -1);
-                        }
-                    }
-                break;
-                case 'd':
-                    if (test.length <= 3) {
-                        
-                    } else if (test.charAt(test.length - 2) === 'y') {
-                        if (test.charAt(test.length - 3) === 'e') {
-                            string[i] = test.slice(0, -2);
-                        }
-                    } else if (test.charAt(test.length - 2) === 'e') {
-                        if (test.charAt(test.length - 3) === 'i') {
-                            if (test.length - 4 === 0) {
+                        } else if (test.charAt(test.length - 2) === 'e') {
+                            if (test.charAt(test.length - 3) === 'i') {
+                                if (test.length - 4 === 0) {
+                                    string[i] = test.slice(0, -1);
+                                } else {
+                                    string[i] = test.slice(0, -3);
+                                    string[i] = string[i] + 'y';
+                                }
+                            } else {
                                 string[i] = test.slice(0, -1);
-                            } else {
-                                string[i] = test.slice(0, -3);
-                                string[i] = string[i] + 'y';
                             }
-                        } else if (test.charAt(test.length - 3) === 'y') {
+                        } else if (vowels.includes(test.charAt(test.length - 2))) {
                             string[i] = test.slice(0, -1);
-                        } else if (test.charAt(test.length - 3) === test.charAt(test.length - 4)) {   
-                            if (test.charAt(test.length - 3) === 's') {
+                        } else if (consonants.includes(test.charAt(test.length - 2))) {
+                            if (test.charAt(test.length - 2) === 's') {
+                            } else {
+                                string[i] = test.slice(0, -1);
+                            }
+                        }
+                    break;
+                    case 'd':
+                        if (test.length <= 3) {
+                        } else if (test.charAt(test.length - 2) === 'y') {
+                            if (test.charAt(test.length - 3) === 'e') {
                                 string[i] = test.slice(0, -2);
-                            } else {
-                                string[i] = test.slice(0, -3);
                             }
-                        } else if (consonants.includes(test.charAt(test.length - 3))) {
-                            if (vowels.includes(test.charAt(test.length - 4))) {
-                                if (test.charAt(test.length - 5) === 'h') {
-                                    if ((test.length - 5) < 2) {
-                                        string[i] = test.slice(0, -1);
-                                    } else {
-                                        string[i] = test.slice(0, -2);
-                                    }
-                                } else if (vowels.includes(test.charAt(test.length - 5))) {
+                        } else if (test.charAt(test.length - 2) === 'e') {
+                            if (test.charAt(test.length - 3) === 'i') {
+                                if (test.length - 4 === 0) {
+                                    string[i] = test.slice(0, -1);
+                                } else {
+                                    string[i] = test.slice(0, -3);
+                                    string[i] = string[i] + 'y';
+                                }
+                            } else if (test.charAt(test.length - 3) === 'y') {
+                                string[i] = test.slice(0, -1);
+                            } else if (test.charAt(test.length - 3) === test.charAt(test.length - 4)) {   
+                                if (test.charAt(test.length - 3) === 's') {
                                     string[i] = test.slice(0, -2);
                                 } else {
-                                    if (consonants.includes(test.charAt(test.length - 6))) {
-                                        if (test.length - 6 > 0) {
+                                    string[i] = test.slice(0, -3);
+                                }
+                            } else if (consonants.includes(test.charAt(test.length - 3))) {
+                                if (vowels.includes(test.charAt(test.length - 4))) {
+                                    if (test.charAt(test.length - 5) === 'h') {
+                                        if ((test.length - 5) < 2) {
+                                            string[i] = test.slice(0, -1);
+                                        } else {
                                             string[i] = test.slice(0, -2);
+                                        }
+                                    } else if (vowels.includes(test.charAt(test.length - 5))) {
+                                        string[i] = test.slice(0, -2);
+                                    } else {
+                                        if (consonants.includes(test.charAt(test.length - 6))) {
+                                            if (test.length - 6 > 0) {
+                                                string[i] = test.slice(0, -2);
+                                            } else {
+                                                string[i] = test.slice(0, -1);
+                                            }
                                         } else {
                                             string[i] = test.slice(0, -1);
                                         }
-                                    } else {
-                                        string[i] = test.slice(0, -1);
+                                    }
+                                } else {
+                                    if (consonants.includes(test.charAt(test.length - 5))) {
+                                        if ((test.length - 5) > 0) {
+                                            string[i] = test.slice(0, -2);
+                                        }
+                                    } else if (vowels.includes(test.charAt(test.length - 5))) {
+                                        string[i] = test.slice(0, -2);
                                     }
                                 }
                             } else {
-                                if (consonants.includes(test.charAt(test.length - 5))) {
-                                    if ((test.length - 5) > 0) {
-                                        string[i] = test.slice(0, -2);
-                                    }
-                                } else if (vowels.includes(test.charAt(test.length - 5))) {
-                                    string[i] = test.slice(0, -2);
-                                }
+                                string[i] = test.slice(0, -1);
                             }
                         }
-                    } 
-                break;
-                default:
-                break;
+                    break;
+                    default:
+                    break;
+                }
             }
         }
     }
