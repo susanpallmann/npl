@@ -134,8 +134,8 @@ let dynamicVerbs= [
 // Modal verbs
 let abilityModalVerbs = [
     "can",
-    "could"
-    "would",
+    "could",
+    "would"
 ];
 
 let possibilityModalVerbs = [
