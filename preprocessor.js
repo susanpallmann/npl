@@ -293,13 +293,13 @@ function stemString(string) {
         if (test.charAt(test.length - 1) === 's') {
             test = test.slice(0, -1);
             pattern = evaluateWordPattern(test);
+                        
+        } else if (test.charAt(test.length - 1) === 'd' && (test.charAt(test.length - 2) === 'e')) {
+            test = test.slice(0, -2);
+            pattern = evaluateWordPattern(test);
             
         } else if (test.charAt(test.length - 1) === 'd') {
             test = test.slice(0, -1);
-            pattern = evaluateWordPattern(test);
-            
-        } else if (test.charAt(test.length - 1) === 'd' && (test.charAt(test.length - 2) === 'e')) {
-            test = test.slice(0, -2);
             pattern = evaluateWordPattern(test);
             
         } else if (test.charAt(test.length - 1) === 'g' && (test.charAt(test.length - 2) === 'n') && (test.charAt(test.length - 3) === 'i')) {
