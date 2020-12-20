@@ -212,6 +212,25 @@ function stemString(string) {
                             }
                         }
                     break;
+                    case: 'g':
+                        if (test.length <= 4) {
+                        } else if (test.charAt(test.length - 2) === 'n' && test.charAt(test.length - 3) === 'i') {
+                            if (consonants.includes(test.charAt(test.length - 4))) {
+                                if (consonants.includes(test.charAt(test.length - 5))) {
+                                    string[i] = test.slice(0, -3);
+                                } else {
+                                    if (consonants.includes(test.charAt(test.length - 6))) {
+                                        string[i] = test.slice(0, -3);
+                                    } else {
+                                        string[i] = test.slice(0, -3);
+                                        string[i] = string[i] + 'e';
+                                    }
+                                }
+                            } else {
+                                string[i] = test.slice(0, -3);
+                            }
+                        }
+                    break;
                     default:
                     break;
                 }
