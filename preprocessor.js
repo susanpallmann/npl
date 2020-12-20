@@ -64,7 +64,7 @@ function stemString(string) {
         'y'
     ];
     
-    let sExceptions = [
+    /*let sExceptions = [
         "his",
         "this",
         "is",
@@ -265,8 +265,44 @@ function stemString(string) {
             }
         }
     }
-    string = string.join(' ');
-    removeStops(string);
+    string = string.join(' ');*/
+    
+    string = string.split(' ');
+    
+    for (i = 0; i < string.length; i++) {
+        let test = string[i];
+        test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
+        
+        function evaluateWordPattern(string) {
+            let pattern = [];
+            for (j = 0; j < string.length; j++) {
+                if (vowels.includes(test.charAt(test.length - j))) {
+                    pattern.push('V');
+                } else if (consonants.includes(test.charAt(test.length - j))) {
+                    pattern.push('C');
+                } else if (sometimes.includes(test.charAt(test.length - j))) {
+                    pattern.push('S');
+                } else {
+                }
+            }
+            console.log(pattern);
+        }
+        
+        if (test.charAt(test.length - 1) === 's') {
+            test = test.slice(0, -3);
+            evaluateWordPattern(test);
+            
+        } else if (test.charAt(test.length - 1) === 'd') {
+            test = test.slice(0, -1);
+            evaluateWordPattern(test);
+            
+        } else if (test.charAt(test.length - 1) === 'g' && (test.charAt(test.length - 2) === 'n') && (test.charAt(test.length - 3) === 'i')) {
+            test = test.slice(0, -1);
+            evaluateWordPattern(test);
+            
+        }    
+    }
+    //removeStops(string);
 }
 
 // Changes contractions to their long form, and ensures that preceding/following punctuation is maintained
