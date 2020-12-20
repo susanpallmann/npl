@@ -75,7 +75,7 @@ function stemString(string) {
                 "was",
                 "lens",
                 "means",
-                "species"
+                "species",
                 "glasses",
                 "cactus",
                 "octopus",
