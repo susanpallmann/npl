@@ -278,35 +278,45 @@ function stemString(string) {
             for (j = 0; j < string.length + 1; j++) {
                 if (vowels.includes(test.charAt(test.length - j))) {
                     pattern.push('V');
-                    console.log(test.charAt(test.length - j));
-                    console.log('V');
                 } else if (consonants.includes(test.charAt(test.length - j))) {
                     pattern.push('C');
-                    console.log(test.charAt(test.length - j));
-                    console.log('C');
                 } else if (sometimes.includes(test.charAt(test.length - j))) {
                     pattern.push('S');
-                    console.log(test.charAt(test.length - j));
-                    console.log('S');
                 } else {
                 }
             }
-            console.log(pattern);
+            return pattern.join('');
         }
+        
+        let pattern;
         
         if (test.charAt(test.length - 1) === 's') {
             test = test.slice(0, -1);
-            evaluateWordPattern(test);
+            pattern = evaluateWordPattern(test);
             
         } else if (test.charAt(test.length - 1) === 'd') {
             test = test.slice(0, -1);
-            evaluateWordPattern(test);
+            pattern = evaluateWordPattern(test);
+            
+        } else if (test.charAt(test.length - 1) === 'd' && (test.charAt(test.length - 2) === 'e')) {
+            test = test.slice(0, -2);
+            pattern = evaluateWordPattern(test);
             
         } else if (test.charAt(test.length - 1) === 'g' && (test.charAt(test.length - 2) === 'n') && (test.charAt(test.length - 3) === 'i')) {
             test = test.slice(0, -3);
-            evaluateWordPattern(test);
+            pattern = evaluateWordPattern(test);
             
-        }    
+        }
+        
+        switch (pattern) {
+            case "VVC":
+                $('#output').text(test + 'ing' + ' ' + test + 'ed' + ' ' + test + 's');
+                break;
+            default:
+                $('#output').text(test);
+                break;
+        }
+        
     }
     //removeStops(string);
 }
