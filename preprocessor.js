@@ -164,6 +164,8 @@ function stemString(string) {
                                 }
                             } else if (test.charAt(test.length - 3) === 'y') {
                                 string[i] = test.slice(0, -1);
+                            } else if (test.charAt(test.length - 3) === 'g') {
+                                string[i] = test.slice(0, -1);
                             } else if (test.charAt(test.length - 3) === test.charAt(test.length - 4)) {   
                                 if (test.charAt(test.length - 3) === 's') {
                                     string[i] = test.slice(0, -2);
