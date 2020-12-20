@@ -275,7 +275,7 @@ function stemString(string) {
         
         function evaluateWordPattern(string) {
             let pattern = [];
-            for (j = 0; j < string.length; j++) {
+            for (j = 0; j < string.length + 1; j++) {
                 if (vowels.includes(test.charAt(test.length - j))) {
                     pattern.push('V');
                     console.log(test.charAt(test.length - j));
