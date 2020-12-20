@@ -18,7 +18,7 @@ function removeStops(string) {
         let test = string[i];
         test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
         if (stopwords.includes(test)) {
-            string.splice(i, 1);
+            string[i] = null;
         }
     }
     string = string.join(' ');
