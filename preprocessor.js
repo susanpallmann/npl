@@ -213,26 +213,51 @@ function stemString(string) {
                         }
                     break;
                     case 'g':
+                        
+                        // Word is less than or equal to 4 letters long, leave alone (ex. "ping")
                         if (test.length <= 4) {
+                            
+                        // Ends in "ing"
                         } else if (test.charAt(test.length - 2) === 'n' && test.charAt(test.length - 3) === 'i') {
+                            
+                            // Pattern: C - ING
                             if (consonants.includes(test.charAt(test.length - 4))) {
+                                
+                                // Pattern: CC - ING
                                 if (consonants.includes(test.charAt(test.length - 5))) {
                                     string[i] = test.slice(0, -3);
+                                    
+                                // Pattern: VC - ING
                                 } else {
+                                    
+                                    // Pattern: CVC - ING
                                     if (consonants.includes(test.charAt(test.length - 6))) {
-                                        string[i] = test.slice(0, -3);
-                                        string[i] = string[i] + 'e';
+                                        
+                                        // Pattern: CCVC - ING
+                                        if (consonants.includes(test.charAt(test.length - 7))) {
+                                            string[i] = test.slice(0, -3);
+                                            string[i] = string[i] + 'e';
+                                        
+                                        // Pattern: VCVC - ING
+                                        } else {
+                                            string[i] = test.slice(0, -3);
+                                            string[i] = string[i] + 'e';
+                                        }
+                                    // Pattern: VVC - ING
                                     } else if (vowels.includes(test.charAt(test.length - 6))) {
                                         string[i] = test.slice(0, -3);
+                                        
+                                    // Pattern: _VC - ING
                                     } else {
                                         string[i] = test.slice(0, -3);
                                         string[i] = string[i] + 'e';
                                     }
                                 }
+                            // Pattern: V - ING
                             } else {
                                 string[i] = test.slice(0, -3);
                             }
-                        }aging
+                        }
                     break;
                     default:
                     break;
