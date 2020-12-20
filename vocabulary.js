@@ -26,7 +26,7 @@ let contractions = [
     ["she'd", "she would"]
 ];
 
-// Stative Verbs
+// Stative verbs
 let mentalStateVerbs = [
     "know",
     "believe",
@@ -91,4 +91,342 @@ let measureVerbs = [
     "fit",
     "depend",
     "matter"
+];
+
+// Stative or dynamic verbs
+let staticDynamicVerbs = [
+    "look",
+    "appear",
+    "think",
+    "feel",
+    "have",
+    "see",
+    "taste",
+    "smell",
+    "be",
+    "weigh",
+    "measure",
+    "mind"
+];
+
+// Dynamic verbs
+let dynamicVerbs= [
+    "run",
+    "yell",
+    "sit",
+    "work",
+    "walk",
+    "eat",
+    "learn",
+    "grow",
+    "sleep",
+    "talk",
+    "write",
+    "design",
+    "code",
+    "program",
+    "read",
+    "become",
+    "go",
+    "cook"
+];
+
+// Modal verbs
+let abilityModalVerbs = [
+    "can",
+    "could"
+    "would",
+];
+
+let possibilityModalVerbs = [
+    "can",
+    "could",
+    "may",
+    "might"
+];
+  
+let adviceModalVerbs = [
+    "should",
+    "ought"
+];
+
+let obligationModalVerbs = [
+    "will",
+    "shall",
+    "must"
+];
+
+// Irregular verbs
+let irregularVerbs = [
+    "arise",
+    "awake",
+    "be",
+    "bear",
+    "beat",
+    "become",
+    "begin",
+    "bend",
+    "bet",
+    "bind",
+    "bite",
+    "bleed",
+    "blow",
+    "break",
+    "breed",
+    "bring",
+    "broadcast",
+    "build",
+    "burn",
+    "burst",
+    "buy",
+    "can",
+    "catch",
+    "choose",
+    "cling",
+    "come",
+    "cost",
+    "creep",
+    "cut",
+    "deal",
+    "dig",
+    "do",
+    "draw",
+    "dream",
+    "drink",
+    "drive",
+    "eat",
+    "fall",
+    "feed",
+    "feel",
+    "fight",
+    "find",
+    "fly",
+    "forbid",
+    "forget",
+    "forgive",
+    "freeze",
+    "get",
+    "give",
+    "go",
+    "grind",
+    "grow",
+    "hang",
+    "have",
+    "hear",
+    "hide",
+    "hit",
+    "hold",
+    "hurt",
+    "keep",
+    "kneel",
+    "know",
+    "lay",
+    "lead",
+    "lean",
+    "learn",
+    "leave",
+    "lent",
+    "lie",
+    "light",
+    "lose",
+    "make",
+    "may",
+    "mean",
+    "meet",
+    "mow",
+    "must",
+    "overtake",
+    "pay",
+    "put",
+    "read",
+    "ride",
+    "ring",
+    "rise",
+    "run",
+    "saw",
+    "say",
+    "see",
+    "sell",
+    "send",
+    "set",
+    "sew",
+    "shake",
+    "shed",
+    "shine",
+    "shoot",
+    "show",
+    "shrink",
+    "shut",
+    "sing",
+    "sink",
+    "sit",
+    "sleep",
+    "slide",
+    "smell",
+    "sow",
+    "speak",
+    "spell",
+    "spend",
+    "spill",
+    "spit",
+    "spread",
+    "stand",
+    "steal",
+    "stick",
+    "sting",
+    "stink",
+    "strike",
+    "swear",
+    "sweep",
+    "swell",
+    "swim",
+    "swing",
+    "take",
+    "teach",
+    "tear",
+    "tell",
+    "think",
+    "throw",
+    "understand",
+    "wake",
+    "wear",
+    "weep",
+    "win",
+    "wind",
+    "write"
+];
+
+// Participles (verbs that are adjectives when in -ing -ed form)
+// (TODO: add these)
+
+// Gerunds (verbs that function as nouns when in -ing form)
+// (TODO: add these)
+
+// Verbs followed by gerunds
+let gerundPrecursorVerbs = [
+    "admit",
+    "advise",
+    "anticipate",
+    "acknowledge",
+    "appreciate",
+    "avoid",
+    "bear",
+    "begin",
+    "complete",
+    "consider",
+    "defer",
+    "delay",
+    "deny",
+    "discuss",
+    "dislike",
+    "enjoy",
+    "entail",
+    "finish",
+    "forget",
+    "hate",
+    "intend",
+    "involve",
+    "justify",
+    "keep",
+    "like",
+    "love",
+    "mention",
+    "mind",
+    "miss",
+    "postpone",
+    "practice",
+    "prefer",
+    "quit",
+    "recall",
+    "recollect",
+    "recommend",
+    "regret",
+    "resent",
+    "resist",
+    "risk",
+    "sanction",
+    "start",
+    "stop",
+    "suggest",
+    "tolerate",
+    "try"
+];
+
+// Verbs followed by infinitives
+let infinitivePrecursorVerbs = [
+    "afford",
+    "agree",
+    "aim",
+    "appear",
+    "attempt",
+    "ask",
+    "arrange",
+    "beg",
+    "begin",
+    "care",
+    "choose",
+    "claim",
+    "consent",
+    "continue",
+    "dare",
+    "decide",
+    "demand",
+    "deserve",
+    "dislike",
+    "expect",
+    "fail",
+    "forget",
+    "get",
+    "hesitate",
+    "hope",
+    "hurry",
+    "intend",
+    "learn",
+    "like",
+    "love",
+    "manage",
+    "mean",
+    "neglect",
+    "need",
+    "offer",
+    "plan",
+    "prefer",
+    "prepare",
+    "pretend",
+    "proceed",
+    "promise",
+    "propose",
+    "refuse",
+    "remember",
+    "seem",
+    "start",
+    "stop",
+    "struggle",
+    "swear",
+    "threaten",
+    "try",
+    "volunteer",
+    "wait",
+    "want",
+    "wish"
+];
+
+// Auxiliary verbs
+let auxiliaryVerbs = [
+    "do",
+    "have",
+    "be",
+    "will"
+];
+
+// Causative verbs
+let auxiliaryVerbs = [
+    "have",
+    "get",
+    "make",
+    "let"
+];
+
+// Concrete Nouns
+let concreteNouns = [
 ];
