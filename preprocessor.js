@@ -310,7 +310,7 @@ function stemString(string) {
         
         switch (pattern) {
             case "VVC":
-                $('#output').text(test + 'ing' + ' ' + test + 'ed' + ' ' + test + 's');
+                $('#output').text(test + 'ing' + ' ' + test + 'd' + ' ' + test + 's');
                 break;
             default:
                 $('#output').text(test);
