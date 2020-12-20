@@ -212,7 +212,7 @@ function stemString(string) {
                             }
                         }
                     break;
-                    case: 'g':
+                    case 'g':
                         if (test.length <= 4) {
                         } else if (test.charAt(test.length - 2) === 'n' && test.charAt(test.length - 3) === 'i') {
                             if (consonants.includes(test.charAt(test.length - 4))) {
