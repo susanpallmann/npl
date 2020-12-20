@@ -110,7 +110,7 @@ function stemString(string) {
     for (i = 0; i < string.length; i++) {
         let test = string[i];
         test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
-        if (dExceptions.contains(test)) {
+        if (dExceptions.includes(test)) {
         } else {
             for (j = 0; j < test.length; j++) {
                 let lastLetter = test.charAt(test.length - 1);
