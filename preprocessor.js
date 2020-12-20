@@ -278,10 +278,16 @@ function stemString(string) {
             for (j = 0; j < string.length; j++) {
                 if (vowels.includes(test.charAt(test.length - j))) {
                     pattern.push('V');
+                    console.log(test.charAt(test.length - j));
+                    console.log('V');
                 } else if (consonants.includes(test.charAt(test.length - j))) {
                     pattern.push('C');
+                    console.log(test.charAt(test.length - j));
+                    console.log('C');
                 } else if (sometimes.includes(test.charAt(test.length - j))) {
                     pattern.push('S');
+                    console.log(test.charAt(test.length - j));
+                    console.log('S');
                 } else {
                 }
             }
