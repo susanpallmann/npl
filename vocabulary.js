@@ -420,7 +420,7 @@ let auxiliaryVerbs = [
 ];
 
 // Causative verbs
-let auxiliaryVerbs = [
+let causativeVerbs = [
     "have",
     "get",
     "make",
