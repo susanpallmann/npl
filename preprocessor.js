@@ -68,9 +68,31 @@ function stemString(string) {
 
         for (j = 0; j < test.length; j++) {
             let lastLetter = test.charAt(test.length - 1);
+            let sExceptions = [
+                "his",
+                "this",
+                "is",
+                "its",
+                "it's",
+                "bus",
+                "yes",
+                "gas",
+                "athletics",
+                "acoustics",
+                "linguistics",
+                "billiards",
+                "logistics",
+                "diabetes",
+                "news",
+                "hypothesis",
+                "virus",
+                "mucus",
+                "coronavirus"
+            ];
             switch (lastLetter) {
                 case 's':
-                    if (test.charAt(test.length - 2) === 'y') {
+                    if (sExceptions.includes(test)) {
+                    } else if (test.charAt(test.length - 2) === 'y') {
                         if (test.charAt(test.length - 3) === 'e') {
                             string[i] = test.slice(0, -1);
                         }
