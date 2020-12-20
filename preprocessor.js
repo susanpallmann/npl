@@ -105,12 +105,19 @@ function stemString(string) {
         "bleed"
     ];
     
+    let idExceptions = [
+        "maid",
+        "aid",
+        "plaid"
+    ];
+    
     string = string.split(' ');
     
     for (i = 0; i < string.length; i++) {
         let test = string[i];
         test = test.toLowerCase().replace(/'\B|[^a-z'? ]/g, ``);
         if (dExceptions.includes(test)) {
+        } else if (idExceptions.includes(test)) {
         } else {
             for (j = 0; j < test.length; j++) {
                 let lastLetter = test.charAt(test.length - 1);
@@ -195,6 +202,11 @@ function stemString(string) {
                                 }
                             } else {
                                 string[i] = test.slice(0, -1);
+                            }
+                        } else if (test.charAt(test.length - 2) === 'i') {
+                            if (test.charAt(test.length - 3) === 'a') {
+                                string[i] = test.slice(0, -3);
+                                string[i] = string[i] + 'y';
                             }
                         }
                     break;
