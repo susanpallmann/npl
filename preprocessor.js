@@ -10,7 +10,8 @@ function removeStops(string) {
         'the',
         'so',
         'very',
-        'much'
+        'much',
+        'and'
     ];
     
     string = string.split(' ');
