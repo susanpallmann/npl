@@ -205,7 +205,7 @@ function stemString(string) {
                             }
                         } else if (test.charAt(test.length - 2) === 'i') {
                             if (test.charAt(test.length - 3) === 'a') {
-                                string[i] = test.slice(0, -3);
+                                string[i] = test.slice(0, -2);
                                 string[i] = string[i] + 'y';
                             }
                         }
