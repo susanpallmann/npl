@@ -7,7 +7,10 @@ function removeStops(string) {
     let stopwords = [
         'a',
         'an',
-        'the'
+        'the',
+        'so',
+        'very',
+        'much'
     ];
     
     string = string.split(' ');
