@@ -1,6 +1,7 @@
 let contractions = [
     ["can't", "can not"],
     ["won't", "will not"],
+    ["was't", "was not"],
     ["wouldn't", "would not"],
     ["couldn't", "could not"],
     ["aren't", "are not"],
