@@ -221,9 +221,9 @@ function stemString(string) {
                                 } else {
                                     if (consonants.includes(test.charAt(test.length - 6))) {
                                         string[i] = test.slice(0, -3);
+                                        string[i] = string[i] + 'e';
                                     } else {
                                         string[i] = test.slice(0, -3);
-                                        string[i] = string[i] + 'e';
                                     }
                                 }
                             } else {
