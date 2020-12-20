@@ -218,13 +218,16 @@ function stemString(string) {
                             if (consonants.includes(test.charAt(test.length - 4))) {
                                 if (consonants.includes(test.charAt(test.length - 5))) {
                                     string[i] = test.slice(0, -3);
-                                } else {
+                                } else if (vowels.includes(test.charAt(test.length - 5))) {
                                     if (consonants.includes(test.charAt(test.length - 6))) {
                                         string[i] = test.slice(0, -3);
                                         string[i] = string[i] + 'e';
-                                    } else {
+                                    } else if (vowels.includes(test.charAt(test.length - 6))) {
                                         string[i] = test.slice(0, -3);
                                     }
+                                } else {
+                                    string[i] = test.slice(0, -3);
+                                    string[i] = string[i] + 'e';
                                 }
                             } else {
                                 string[i] = test.slice(0, -3);
