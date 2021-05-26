@@ -64,7 +64,7 @@ function stemString(string) {
         'y'
     ];
     
-    /*let sExceptions = [
+    let sExceptions = [
         "his",
         "this",
         "is",
@@ -390,7 +390,7 @@ function changeContractions(string) {
     
     // puts the sentence back together, words separated by spaces again
     string = string.join(' ');
-    stemString(string);
+    //stemString(string);
 }
 
 // replaces accented characters with their equivalent plain letter
