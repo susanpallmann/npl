@@ -265,9 +265,9 @@ function stemString(string) {
             }
         }
     }
-    string = string.join(' ');*/
+    string = string.join(' ');
     
-    string = string.split(' ');
+    //string = string.split(' ');
     
     for (i = 0; i < string.length; i++) {
         let test = string[i];
@@ -390,7 +390,7 @@ function changeContractions(string) {
     
     // puts the sentence back together, words separated by spaces again
     string = string.join(' ');
-    //stemString(string);
+    stemString(string);
 }
 
 // replaces accented characters with their equivalent plain letter
