@@ -267,7 +267,7 @@ function stemString(string) {
     }
     string = string.join(' ');
     
-    //string = string.split(' ');
+    string = string.split(' ');
     
     for (i = 0; i < string.length; i++) {
         let test = string[i];
